@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">StaticScreen</string>
+    <string name="beauty_n_tools">Beauty   Tools</string>
+    <string name="home_n_fragrance">Home   Fragrance</string>
+    <string name="gift">Gift</string>
+    <string name="men">Men</string>
+    <string name="makeup">MakeUp</string>
+    <string name="skincare">SkinCare</string>
+    <string name="icons">icons</string>
+    <string name="bestseller">BestSeller</string>
+    <string name="lips">Lips</string>
+    <string name="nails">Nails</string>
+    <string name="face">Face</string>
+    <string name="banner">banner</string>
+    <string name="lipstick">Lipstick</string>
+    <string name="viewall">View all</string>
+    <string name="gloss">Gloss</string>
+    <string name="parada">PARADA</string>
+    <string name="candy">Candy</string>
+    <string name="_265_sr">265 SR</string>
+    <string name="add">Add</string>
+</resources>
