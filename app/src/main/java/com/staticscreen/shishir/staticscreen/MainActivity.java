@@ -16,8 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 /**
- * This class is responsible to handle the button clicks for drop down and population horizontal and verticall scroll of
+ * This class is responsible to handle the button clicks for drop down and populate horizontal and vertical scroll of
  * Best Seller component. We also introduced an auto scroll for banner.
+ * The coding style used is normal android default as most of the component are static and in xml only
  */
 
 public class MainActivity extends Activity implements View.OnClickListener {
