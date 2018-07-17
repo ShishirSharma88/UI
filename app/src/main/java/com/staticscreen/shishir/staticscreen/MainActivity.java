@@ -98,6 +98,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         final int[] maxScroll = {(mainHorizontalChildLayout.getChildCount() - VISIBLE_COUNT_BANNER)
                 * mainHorizontalChildLayout.getChildAt(0).getMeasuredWidth()};
 
+        final int singleChildSize = mainHorizontalChildLayout.getChildAt(0).getMeasuredWidth();
+        final int totalChildCount = mainHorizontalChildLayout.getChildCount();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -108,28 +111,30 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         bestSellerHorizontalScroll.getScrollY());
 
                 int currentPosition = bestSellerHorizontalScroll.getScrollX();
+
                 if (currentPosition > maxScroll[0]) {
 
                     // To scroll banner in left direction
-                    factor[0] = -mainHorizontalChildLayout.getChildAt(0).getMeasuredWidth();
+                    factor[0] = -singleChildSize;
+
+                    // Starting position of banner
                     maxScroll[0] = 0;
                 } else {
 
                     // To scroll banner in right direction
-                    factor[0] = mainHorizontalChildLayout.getChildAt(0).getMeasuredWidth();
-                    maxScroll[0] = (mainHorizontalChildLayout.getChildCount() - VISIBLE_COUNT_BANNER)
-                            * mainHorizontalChildLayout.getChildAt(0).getMeasuredWidth();
+                    factor[0] = singleChildSize;
+                    maxScroll[0] = (totalChildCount - VISIBLE_COUNT_BANNER) * singleChildSize;
                 }
-
                 handler.postDelayed(this, TIME_DELAY_SEC);
-
             }
         }, TIME_DELAY_SEC);
 
     }
 
     private void populateBestSellers() {
-        for (int k = 0; k < 3; k++) {
+        final int maxPosition = 3;
+
+        for (int k = 0; k < maxPosition; k++) {
             LinearLayout mainBestSellerLayout;
             if (k == 0) {
                 mainBestSellerLayout = mainHorizontalChildLayout;
@@ -139,13 +144,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 mainBestSellerLayout = mainHorizontalChildLayoutTwo;
             }
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < maxPosition; i++) {
                 @SuppressLint("InflateParams")
                 View view = LayoutInflater.from(this).inflate(R.layout.layout_child_bestseller, null);
                 RelativeLayout bestSellersChildLayout = (RelativeLayout)
                         view.findViewById(R.id.layout_bestsell);
 
-                int screenWidth = getScreenWidth() * 7 / 10;
+                // Calculate width to occupy full space of parent layout
+                int screenWidth = (getScreenWidth() * 7) / 10;
 
                 bestSellersChildLayout.setLayoutParams(
                         new RelativeLayout.LayoutParams(screenWidth, RelativeLayout.LayoutParams.MATCH_PARENT));
@@ -166,6 +172,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+
         // To handle open and close of drop drown
         int tag = (Integer) v.getTag();
         switch (v.getId()) {
