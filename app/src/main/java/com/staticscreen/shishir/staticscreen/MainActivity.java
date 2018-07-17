@@ -15,9 +15,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+/**
+ * This class is responsible to handle the button clicks for drop down and population horizontal and verticall scroll of
+ * Best Seller component. We also introduced an auto scroll for banner.
+ */
+
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private final static int VISIBLE_COUNT_BANNER = 2;
+    private final static int TIME_DELAY_SEC = 1000;
 
     private ImageView dropDownBestSeller;
     private ImageView dropDownLips;
@@ -104,7 +110,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 if (currentPosition > maxScroll[0]) {
 
                     // To scroll banner in left direction
-                    factor[0] = - mainHorizontalChildLayout.getChildAt(0).getMeasuredWidth();
+                    factor[0] = -mainHorizontalChildLayout.getChildAt(0).getMeasuredWidth();
                     maxScroll[0] = 0;
                 } else {
 
@@ -114,10 +120,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             * mainHorizontalChildLayout.getChildAt(0).getMeasuredWidth();
                 }
 
-                handler.postDelayed(this, 1000);
+                handler.postDelayed(this, TIME_DELAY_SEC);
 
             }
-        }, 1000);
+        }, TIME_DELAY_SEC);
 
     }
 
@@ -159,6 +165,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        // To handle open and close of drop drown
         int tag = (Integer) v.getTag();
         switch (v.getId()) {
             case R.id.image_one:

@@ -36,8 +36,8 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/lipstick_with_cover"
-                    android:contentDescription="@string/icons"/>
+                    android:contentDescription="@string/icons"
+                    android:src="@drawable/lipstick_with_cover"/>
 
                 <TextView
                     android:layout_width="wrap_content"

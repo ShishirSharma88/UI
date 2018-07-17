@@ -95,8 +95,8 @@
                 android:id="@+id/layout_lips"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <include layout="@layout/layout_dropdown"/>
             </LinearLayout>
@@ -137,8 +137,8 @@
                 android:id="@+id/layout_nails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:gravity="center"
+                android:orientation="vertical"
                 android:visibility="gone">
 
                 <include layout="@layout/layout_dropdown"/>
@@ -181,8 +181,8 @@
                 android:id="@+id/layout_face"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:gravity="center"
+                android:orientation="vertical"
                 android:visibility="gone">
 
                 <include layout="@layout/layout_dropdown"/>

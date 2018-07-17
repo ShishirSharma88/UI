@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".MainActivity">
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline_left"
@@ -56,11 +56,11 @@
     <LinearLayout
         android:id="@+id/layout_right_scroll"
         android:layout_width="0dp"
-        android:visibility="gone"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@+id/guideline_right"
         app:layout_constraintRight_toRightOf="parent"
